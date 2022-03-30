@@ -20,9 +20,17 @@ void uart_send(char letter) {
     while(UART->TXDRDY[0] != 0x1) {
 
     }
-    UART->STOPTX[0] = 0x0;
+    //UART->TXDRDY[0] = 0x0;
+    UART->STOPTX[0] |= 0x1;
 }
 
 char uart_read() {
+
+    UART->STARTRX |= 0x1;
+    if (!UART->RXDRDY[0]) {
+        return '\0';
+    }
+    //UART->RXDRDY[0] = 0x0;
+    return (char) UART->RXD[0];
 
 }

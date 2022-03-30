@@ -7,18 +7,17 @@ typedef struct {
     volatile uint32_t STOPRX;
     volatile uint32_t STARTTX;
     volatile uint32_t STOPTX[4];
-    volatile uint32_t SUSPEND;
+    volatile uint32_t SUSPEND[57];
     volatile uint32_t CTS;
     volatile uint32_t NCTS;
     volatile uint32_t RXDRDY[5];
     volatile uint32_t TXDRDY[2];
     volatile uint32_t EROOR[8];
     volatile uint32_t RXTO[47];
-    volatile uint32_t SHORTS;
-    volatile uint32_t UNUSED[32];
+    volatile uint32_t SHORTS[65];
     volatile uint32_t INTENSET;
     volatile uint32_t INTENCLR[94];
-    volatile uint32_t ERRORSRC[8];
+    volatile uint32_t ERRORSRC[32];
     volatile uint32_t ENABLE[2];
     volatile uint32_t PSEL_RTS;
     volatile uint32_t PSEL_TXD;
@@ -35,4 +34,3 @@ void uart_init();
 void uart_send(char letter);
 char uart_read();
 
-//Test
