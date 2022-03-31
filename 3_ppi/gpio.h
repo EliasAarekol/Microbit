@@ -36,5 +36,10 @@ typedef struct {
 } NRF_GPIO_REGS1;
 
 
+#define BUTTON_A_PIN 14
+
+
+
+
 #endif
 
