@@ -26,6 +26,10 @@ typedef struct {
 
 #define PORT_SELECT_BIT 13
 
+#define POL_SELECT_BIT 16
+
+#define INIT_VAL_BIT 20
+
 void gpiote_init();
 
 #endif

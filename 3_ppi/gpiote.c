@@ -14,10 +14,13 @@ void gpiote_init()
 { 
     GPIOTE->CONFIG[0] = 0x1; 
     GPIOTE->CONFIG[0] |= (BUTTON_A_PIN) << 8;
+    GPIOTE->CONFIG[0] |= 2 << POL_SELECT_BIT;
 
     for (int i = 1; i < 6; i++) {
         GPIOTE->CONFIG[i] = 0x3;
+        GPIOTE->CONFIG[i] |= 0x3 << POL_SELECT_BIT;  
         GPIOTE->CONFIG[i] |= 0x0 << PORT_SELECT_BIT;
+        GPIOTE->CONFIG[i] |= 0x0 << INIT_VAL_BIT;
     
     }
     //set pins
